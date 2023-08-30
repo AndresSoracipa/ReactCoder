@@ -1,8 +1,20 @@
-import React from 'react';
-import ItemList from '../ItemList/ItemList';
+import { useState, useEffect } from "react";
+import { getProducts} from "../../services";
+import ItemList from "../ItemList/ItemList";
 
-const ItemListContainer = ({list}) => {
-    return <ItemList/>;
+const ItemListContainer = () => {
+    const [items, setItems] = useState ([]);
+
+    useEffect(() => {
+        getProducts().then((response) => {
+            setItems(response);
+
+        });
+
+    }, []);
+
+
+    return <ItemList items={items}/>;
 
 };
 
