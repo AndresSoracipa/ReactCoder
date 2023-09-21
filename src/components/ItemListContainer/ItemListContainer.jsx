@@ -5,20 +5,24 @@ import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => {
     const [items, setItems] = useState ([]);
+    const [isLoading, setIsloading] = useState (true);
     const { categoryId } = useParams();
 
 
     useEffect(() => {
         console.log("useEffect", categoryId);
+
+        setIsloading(true);
+
         getProducts(categoryId).then((response) => {
             setItems(response);
-
+            setIsloading(false);
         });
 
     }, [categoryId]);
 
 
-    return <ItemList items={items}/>;
+    return <ItemList items={items} isLoading={isLoading}/>;
 
 };
 

@@ -11,9 +11,9 @@ const   ItemList = ({items}) => {
             {items.map((item) => (
                 <li key={item.id} className="list-group-item">
                     <Link className="text-decoration-none" to={`/item/${item.id}`}>
-                    <h3 className="mb-1">{item.name}</h3>
+                    <h3 className="mb-1">{item.title}</h3>
                     <p className="mb-1">${item.price}</p>
-                    <p className="mb-0">{item.category}</p>
+                    <p className="mb-0">{item.categoryId}</p>
                     </Link>
                     </li>
             ))}
