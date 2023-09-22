@@ -7,6 +7,9 @@ const   ItemList = ({items}) => {
     <div className="container"> 
         <h1 className="mb-4">ItemList</h1>
 
+        <Link to="../Checkout">Finalizar compra</Link>
+
+
         <ul className="list-group">
             {items.map((item) => (
                 <li key={item.id} className="list-group-item">

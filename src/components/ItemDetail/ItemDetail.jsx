@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 
 
-const   ItemDetail = ({ item, isLoading }) => {
+
+
+const   ItemDetail = ({ item, isLoading, addItem }) => {
     if (isLoading) {
         return <h2>Loading...</h2>;
     }
@@ -19,6 +21,7 @@ const   ItemDetail = ({ item, isLoading }) => {
         <p>${item.price}</p>
         <p>Stock: {item.stock}</p>
         <p>Categoría:{item.categoryId}</p>
+        <button onClick={() => addItem(item, 1)}>Agregar al carrito</button>
         </div>
     );
 };
@@ -26,7 +29,8 @@ const   ItemDetail = ({ item, isLoading }) => {
 ItemDetail.propTypes = {
     item: PropTypes.object,
     isLoading: PropTypes.bool,
-}
+    addItem: PropTypes.func,
+};
 
 
 
