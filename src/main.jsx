@@ -8,12 +8,12 @@ import App from './App.jsx'
 import './index.css'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBdCe9vlQfShSV5UZ7dqXkNrc5Sp49P_48",
-  authDomain: "react-coder-fe34b.firebaseapp.com",
-  projectId: "react-coder-fe34b",
-  storageBucket: "react-coder-fe34b.appspot.com",
-  messagingSenderId: "1049212459634",
-  appId: "1:1049212459634:web:55319c47096d82ff2100eb"
+  apiKey: import.meta.env.VITE_FIRESTORE_API_KEY,
+  authDomain: import.meta.env.VITE_FIRESTORE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIRESTORE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIRESTORE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIRESTORE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIRESTORE_APP_ID,
 };
 
 initializeApp(firebaseConfig);

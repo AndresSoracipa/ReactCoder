@@ -3,6 +3,7 @@ import CartContext from "../../context/CartContext";
 import { getCartTotal, mapCartToOrderItems } from "../../../src/utils";
 import { serverTimestamp } from "firebase/firestore";
 import { createOrder } from "../../services";
+import ContactForm from "../ContactForm/ContactForm";
 
 
 
@@ -45,9 +46,9 @@ return (
         {!orderId && (
             <>
 
-                <div>
+                <ContactForm>
                     <h4>Formulario de contacto</h4>
-                </div>
+                </ContactForm>
 
                 <h4>Productos</h4>
                 <ul>
